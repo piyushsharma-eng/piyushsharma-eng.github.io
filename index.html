@@ -32,6 +32,8 @@
   .nav-hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
   .nav-hamburger.open span:nth-child(2){opacity:0}
   .nav-hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+  #nav-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:240;-webkit-tap-highlight-color:transparent}
+  #nav-backdrop.visible{display:block}
 
   /* HERO — padding-based, no flex tricks */
   .hero{
@@ -267,6 +269,7 @@
   </div>
 </div>
 
+<div id="nav-backdrop" onclick="toggleNav()"></div>
 <nav>
   <a class="nav-name" href="#">Piyush Sharma</a>
   <div class="nav-links" id="nav-links">
@@ -609,12 +612,15 @@ gsap.from('.video-placeholder', {opacity:0, y:30, duration:.8, ease:'power2.out'
 function toggleNav(){
   document.getElementById('nav-links').classList.toggle('mobile-open');
   document.getElementById('nav-hamburger').classList.toggle('open');
+  document.getElementById('nav-backdrop').classList.toggle('visible');
+}
+function closeNav(){
+  document.getElementById('nav-links').classList.remove('mobile-open');
+  document.getElementById('nav-hamburger').classList.remove('open');
+  document.getElementById('nav-backdrop').classList.remove('visible');
 }
 document.querySelectorAll('#nav-links a').forEach(a => {
-  a.addEventListener('click', () => {
-    document.getElementById('nav-links').classList.remove('mobile-open');
-    document.getElementById('nav-hamburger').classList.remove('open');
-  });
+  a.addEventListener('click', closeNav);
 });
 function openContact(){const o=document.getElementById('contact-overlay');o.classList.add('open');document.body.style.overflow='hidden';o.scrollTop=0;}
 function closeContact(){document.getElementById('contact-overlay').classList.remove('open');document.body.style.overflow='';}
