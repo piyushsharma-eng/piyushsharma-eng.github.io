@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Piyush Sharma — Embedded Systems Engineer</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23111318'/><text x='16' y='23' text-anchor='middle' font-family='Georgia,serif' font-size='22' fill='%23d4c4a3'>P</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <meta name="referrer" content="no-referrer-when-downgrade">
@@ -159,6 +160,24 @@
   #back-to-top{position:fixed;bottom:2rem;right:2rem;width:44px;height:44px;border-radius:50%;background:var(--card);border:1px solid var(--border);color:var(--accent);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s,border-color .25s,background .25s;z-index:100;}
   #back-to-top.visible{opacity:1;pointer-events:all}
   #back-to-top:hover{background:var(--accent);color:#111318;border-color:var(--accent)}
+  #scroll-progress{position:fixed;top:0;left:0;height:2px;width:0%;background:var(--accent);z-index:1000;pointer-events:none;transition:width .08s linear;}
+  .hero-status{display:flex;align-items:center;gap:.55rem;margin-bottom:2rem;font-size:.72rem;color:var(--soft);font-weight:300;letter-spacing:.05em;}
+  .status-dot{width:7px;height:7px;border-radius:50%;background:#4ade80;flex-shrink:0;animation:statusPulse 2.5s ease-in-out infinite;}
+  @keyframes statusPulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(74,222,128,.5)}60%{opacity:.8;box-shadow:0 0 0 7px rgba(74,222,128,0)}}
+  .section-eyebrow{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);font-weight:400;margin-bottom:.9rem;}
+  .skill-card-title{display:flex;align-items:center;gap:.6rem;}
+  .skill-icon{width:15px;height:15px;flex-shrink:0;opacity:.65;}
+  .proj-cta{display:inline-flex;align-items:center;gap:.4rem;margin-top:1.4rem;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:3px;transition:color .2s,border-color .2s;font-weight:400;}
+  .proj-cta:hover{color:var(--accent);border-color:var(--accent);}
+  .timeline{position:relative;}
+  .timeline::before{content:'';position:absolute;left:88px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,rgba(212,196,163,.12) 15%,rgba(212,196,163,.12) 85%,transparent);}
+  .timeline-item{position:relative;}
+  .timeline-item::after{content:'';position:absolute;left:84px;top:3.8rem;width:9px;height:9px;border-radius:50%;background:var(--bg);border:1px solid rgba(212,196,163,.35);z-index:1;}
+  .nav-links a.nav-active{color:var(--accent) !important;}
+  .footer-socials{display:flex;justify-content:center;gap:1.6rem;margin-bottom:1.2rem;}
+  .footer-socials a{color:#4a4a44;transition:color .2s;display:flex;align-items:center;}
+  .footer-socials a:hover{color:var(--accent);}
+  .footer-socials svg{width:18px;height:18px;}
 
   #lightbox{position:fixed;inset:0;z-index:900;background:rgba(0,0,0,0.92);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s ease;cursor:zoom-out;}
   #lightbox.open{opacity:1;pointer-events:all}
@@ -201,6 +220,7 @@
     #nav-links a:last-of-type{border-bottom:none}
     #nav-links a:hover{color:var(--accent)}
     .nav-contact-btn{margin-top:1.5rem;width:100%;text-align:center;padding:.7rem 1rem !important}
+    .timeline::before,.timeline-item::after{display:none;}
 
     .hero{padding:1.5rem 1.4rem 4rem}
     .hero-name{white-space:normal;font-size:clamp(2.6rem,11vw,4.2rem);margin-bottom:1.8rem}
@@ -278,6 +298,7 @@
   </div>
 </div>
 
+<div id="scroll-progress"></div>
 <div id="nav-backdrop" onclick="toggleNav()"></div>
 <nav>
   <a class="nav-name" href="#">Piyush Sharma</a>
@@ -296,14 +317,15 @@
 
 <div id="about">
   <div class="hero">
+    <div class="hero-status"><span class="status-dot"></span>Currently: PhD Researcher · Santa Clara University</div>
     <div class="hero-tag">Embedded Systems &nbsp;·&nbsp; Robotics &nbsp;·&nbsp; Controls</div>
     <h1 class="hero-name"><span>Piyush</span><span>Sharma</span></h1>
     <div class="hero-stats">
-      <span class="hero-stat"><strong>5+</strong> years experience</span>
+      <span class="hero-stat"><strong data-count="5" data-suffix="+">5+</strong> years experience</span>
       <span class="hero-stat-dot">·</span>
-      <span class="hero-stat"><strong>2</strong> production lines built</span>
+      <span class="hero-stat"><strong data-count="2" data-suffix="">2</strong> production lines built</span>
       <span class="hero-stat-dot">·</span>
-      <span class="hero-stat"><strong>3</strong> degrees</span>
+      <span class="hero-stat"><strong data-count="3" data-suffix="">3</strong> degrees</span>
     </div>
     <p class="hero-bio">Embedded Controls Engineer and PhD researcher blending hardware and software expertise to push the boundaries of embedded systems. Specializing in C/C++, real-time operating systems, PCB design, MEMS sensor integration, and industrial robotics, building reliable systems from factory floors to human-machine interfaces.</p>
     <div class="hero-ctas">
@@ -328,6 +350,7 @@
 
 <div class="section-divider" id="experience">
   <div class="section-wrap">
+    <p class="section-eyebrow">01</p>
     <h2 class="section-title">Experience</h2>
     <ul class="timeline">
       <li class="timeline-item">
@@ -417,6 +440,7 @@
 
 <div class="section-divider" id="education">
   <div class="section-wrap">
+    <p class="section-eyebrow">02</p>
     <h2 class="section-title">Academic</h2>
     <div class="edu-item">
       <img class="edu-logo" loading="lazy" src="images/SCU.jpeg" alt="Santa Clara University">
@@ -447,24 +471,25 @@
 
 <div class="section-divider" id="skills">
   <div class="section-wrap">
+    <p class="section-eyebrow">03</p>
     <h2 class="section-title">Technical Skills</h2>
     <div class="skills-grid">
       <div class="skill-card">
-        <div class="skill-card-title">Embedded &amp; Firmware</div>
+        <div class="skill-card-title"><svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M6 10H3M6 14H3M18 10h3M18 14h3M10 6V3M14 6V3M10 18v3M14 18v3"/></svg>Embedded &amp; Firmware</div>
         <ul class="skill-list">
           <li>C / C++</li><li>ARM Cortex-M4, STM32</li><li>FreeRTOS, Zephyr RTOS</li>
           <li>HAL, PWM, CAN, UART, SPI, I2C</li><li>Stepper / S-curve motion</li><li>Modbus RTU</li>
         </ul>
       </div>
       <div class="skill-card">
-        <div class="skill-card-title">Robotics &amp; Automation</div>
+        <div class="skill-card-title"><svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>Robotics &amp; Automation</div>
         <ul class="skill-list">
           <li>ROS2</li><li>ABB 6-axis robots (RAPID)</li><li>PLC programming &amp; HMI design</li>
           <li>EtherNet/IP, safety systems</li><li>Keyence vision sensors</li><li>SCADA</li>
         </ul>
       </div>
       <div class="skill-card">
-        <div class="skill-card-title">Tools &amp; Debugging</div>
+        <div class="skill-card-title"><svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>Tools &amp; Debugging</div>
         <ul class="skill-list">
           <li>GDB, Oscilloscope, Logic Analyzer</li><li>JTAG, Wireshark, CAN Analyzer</li>
           <li>ABB RobotStudio</li><li>Altium, AutoCAD, Onshape</li>
@@ -477,6 +502,7 @@
 
 <div class="section-divider" id="projects">
   <div class="section-wrap">
+    <p class="section-eyebrow">04</p>
     <h2 class="section-title">Projects</h2>
     <div class="proj-grid">
       <div class="proj-card">
@@ -491,6 +517,7 @@
             <span class="tag">Qwen VLM</span><span class="tag">SAM 3.1</span><span class="tag">MLX</span>
             <span class="tag">ROS2</span><span class="tag">Apple Silicon</span><span class="tag">Depth Estimation</span><span class="tag">Robot Kinematics</span>
           </div>
+          <a href="https://github.com/piyushsharma-eng" target="_blank" rel="noopener noreferrer" class="proj-cta">View on GitHub →</a>
         </div>
       </div>
       <div class="proj-card">
@@ -506,6 +533,7 @@
             <span class="tag">ARM Cortex-M4</span><span class="tag">CAN Bus</span>
             <span class="tag">FreeRTOS</span><span class="tag">Sensor Fusion</span>
           </div>
+          <a href="https://github.com/piyushsharma-eng" target="_blank" rel="noopener noreferrer" class="proj-cta">View on GitHub →</a>
         </div>
       </div>
       <div class="proj-card">
@@ -521,6 +549,7 @@
             <span class="tag">Linux</span><span class="tag">Systems Programming</span>
             <span class="tag">File Systems</span><span class="tag">Team Lead</span>
           </div>
+          <a href="https://github.com/piyushsharma-eng" target="_blank" rel="noopener noreferrer" class="proj-cta">View on GitHub →</a>
         </div>
       </div>
     </div>
@@ -529,6 +558,7 @@
 
 <div class="section-divider" id="awards">
   <div class="section-wrap">
+    <p class="section-eyebrow">05</p>
     <h2 class="section-title">Recognition</h2>
     <div class="award-item">
       <div class="award-icon">🏆</div>
@@ -549,6 +579,7 @@
 
 <div class="section-divider" id="certifications">
   <div class="section-wrap">
+    <p class="section-eyebrow">06</p>
     <h2 class="section-title">Certifications</h2>
     <div class="cert-grid">
       <div class="cert-card"><div class="cert-issuer">Edge Impulse / Coursera</div><div class="cert-name">Embedded Machine Learning</div></div>
@@ -566,7 +597,14 @@
 
 <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
 
-<footer>© 2026 Piyush Sharma &nbsp;·&nbsp; Embedded Systems · Robotics · Controls</footer>
+<footer>
+  <div class="footer-socials">
+    <a href="https://www.linkedin.com/in/i-piyush" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+    <a href="https://github.com/piyushsharma-eng" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+    <a href="mailto:piyush.sharma10796@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg></a>
+  </div>
+  © 2026 Piyush Sharma &nbsp;·&nbsp; Embedded Systems · Robotics · Controls
+</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous"></script>
@@ -576,21 +614,36 @@ gsap.registerPlugin(ScrollTrigger);
 if(history.scrollRestoration) history.scrollRestoration='manual';
 window.scrollTo(0,0);
 
-gsap.set('.hero-tag, .hero-name, .hero-stats, .hero-bio, .hero-ctas, .scroll-line', {opacity:0});
+gsap.set('.hero-status, .hero-tag, .hero-name, .hero-stats, .hero-bio, .hero-ctas, .scroll-line', {opacity:0});
 
 const heroTl = gsap.timeline({defaults:{ease:'power3.out'}});
 heroTl
-  .to('.hero-tag',    {opacity:1, y:0, duration:.7, delay:.2}, 'start')
+  .to('.hero-status', {opacity:1, duration:.5}, 'start')
+  .from('.hero-status',{y:16}, '<')
+  .to('.hero-tag',    {opacity:1, y:0, duration:.7}, 'start+=.15')
   .from('.hero-tag',  {y:24}, '<')
-  .to('.hero-name',   {opacity:1, duration:.9}, 'start+=.25')
+  .to('.hero-name',   {opacity:1, duration:.9}, 'start+=.3')
   .from('.hero-name', {y:32}, '<')
-  .to('.hero-stats',  {opacity:1, duration:.6}, 'start+=.5')
+  .to('.hero-stats',  {opacity:1, duration:.6}, 'start+=.55')
   .from('.hero-stats',{y:20}, '<')
-  .to('.hero-bio',    {opacity:1, duration:.6}, 'start+=.65')
+  .to('.hero-bio',    {opacity:1, duration:.6}, 'start+=.7')
   .from('.hero-bio',  {y:20}, '<')
-  .to('.hero-ctas',   {opacity:1, duration:.6}, 'start+=.8')
+  .to('.hero-ctas',   {opacity:1, duration:.6}, 'start+=.85')
   .from('.hero-ctas', {y:20}, '<')
-  .to('.scroll-line', {opacity:1, duration:.8, ease:'power1.in'}, 'start+=1.2');
+  .to('.scroll-line', {opacity:1, duration:.8, ease:'power1.in'}, 'start+=1.2')
+  .add(() => {
+    document.querySelectorAll('[data-count]').forEach(el => {
+      const target = +el.dataset.count, suffix = el.dataset.suffix || '', dur = 900;
+      const start = performance.now();
+      const tick = now => {
+        const p = Math.min((now - start) / dur, 1);
+        el.textContent = Math.floor(p * target) + (p < 1 ? '' : suffix);
+        if (p < 1) requestAnimationFrame(tick);
+        else el.textContent = target + suffix;
+      };
+      requestAnimationFrame(tick);
+    });
+  }, 'start+=.55');
 
 document.querySelectorAll('.hero-ctas a').forEach(btn => {
   btn.addEventListener('mousemove', e => {
@@ -638,9 +691,25 @@ document.querySelectorAll('#nav-links a').forEach(a => {
 });
 
 const btt = document.getElementById('back-to-top');
+const progressBar = document.getElementById('scroll-progress');
 window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+  progressBar.style.width = (scrolled * 100) + '%';
   btt.classList.toggle('visible', window.scrollY > 400);
 }, {passive:true});
+
+const navAs = document.querySelectorAll('.nav-links a[href^="#"]');
+const sectionObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navAs.forEach(a => a.classList.toggle('nav-active', a.getAttribute('href') === '#' + e.target.id));
+    }
+  });
+}, {rootMargin:'-35% 0px -55% 0px'});
+['about','experience','education','projects','awards'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) sectionObserver.observe(el);
+});
 function openContact(){const o=document.getElementById('contact-overlay');o.classList.add('open');document.body.style.overflow='hidden';o.scrollTop=0;}
 function closeContact(){document.getElementById('contact-overlay').classList.remove('open');document.body.style.overflow='';}
 function handleContact(e){
