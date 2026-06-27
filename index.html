@@ -160,7 +160,7 @@
   #back-to-top{position:fixed;bottom:2rem;right:2rem;width:44px;height:44px;border-radius:50%;background:var(--card);border:1px solid var(--border);color:var(--accent);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s,border-color .25s,background .25s;z-index:100;}
   #back-to-top.visible{opacity:1;pointer-events:all}
   #back-to-top:hover{background:var(--accent);color:#111318;border-color:var(--accent)}
-  #scroll-progress{position:fixed;top:0;left:0;height:2px;width:0%;background:var(--accent);z-index:1000;pointer-events:none;transition:width .08s linear;}
+  #scroll-progress{position:absolute;bottom:-1px;left:0;height:2px;width:0%;background:var(--accent);pointer-events:none;transition:width .08s linear;z-index:1;}
   .hero-status{display:flex;align-items:center;gap:.55rem;margin-bottom:2rem;font-size:.72rem;color:var(--soft);font-weight:300;letter-spacing:.05em;}
   .status-dot{width:7px;height:7px;border-radius:50%;background:#4ade80;flex-shrink:0;animation:statusPulse 2.5s ease-in-out infinite;}
   @keyframes statusPulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(74,222,128,.5)}60%{opacity:.8;box-shadow:0 0 0 7px rgba(74,222,128,0)}}
@@ -298,7 +298,6 @@
   </div>
 </div>
 
-<div id="scroll-progress"></div>
 <div id="nav-backdrop" onclick="toggleNav()"></div>
 <nav>
   <a class="nav-name" href="#">Piyush Sharma</a>
@@ -313,6 +312,7 @@
   <button class="nav-hamburger" id="nav-hamburger" onclick="toggleNav()" aria-label="Toggle menu">
     <span></span><span></span><span></span>
   </button>
+  <div id="scroll-progress"></div>
 </nav>
 
 <div id="about">
