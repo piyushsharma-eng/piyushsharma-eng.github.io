@@ -182,17 +182,18 @@
     .nav-hamburger{display:flex}
     #nav-links{
       display:flex;flex-direction:column;align-items:flex-start;gap:0;
-      position:fixed;top:0;right:0;bottom:0;width:72vw;max-width:300px;
-      background:#0d0f15;
+      position:fixed;top:0;right:0;bottom:0;width:78vw;max-width:320px;
+      background:#2a2f3d;
       padding:5rem 2rem 2rem;z-index:250;
-      border-left:2px solid var(--accent);
-      box-shadow:-8px 0 32px rgba(0,0,0,0.85);
+      border-left:3px solid var(--accent);
+      box-shadow:-12px 0 40px rgba(0,0,0,0.9);
       transform:translateX(110%);transition:transform .35s cubic-bezier(.4,0,.2,1);
       visibility:hidden;
     }
     #nav-links.mobile-open{transform:translateX(0);visibility:visible;}
-    #nav-links a{font-size:.9rem;letter-spacing:.1em;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,0.08);width:100%;color:var(--text);}
+    #nav-links a{font-size:1rem;letter-spacing:.12em;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.12);width:100%;color:#f1ede4;font-weight:400;}
     #nav-links a:last-of-type{border-bottom:none}
+    #nav-links a:hover{color:var(--accent)}
     .nav-contact-btn{margin-top:1.5rem;width:100%;text-align:center;padding:.7rem 1rem !important}
 
     .hero{padding:1.5rem 1.4rem 4rem}
