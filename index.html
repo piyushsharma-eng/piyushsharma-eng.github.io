@@ -55,13 +55,14 @@
     font-size:1.25rem;color:var(--soft);line-height:1.85;max-width:560px;
     margin-bottom:3.2rem;opacity:0;animation:fadeUp .6s .6s forwards;font-weight:300;
   }
-  .hero-ctas{display:flex;gap:2.2rem;opacity:0;animation:fadeUp .6s .8s forwards;align-items:center}
+  .hero-ctas{display:flex;gap:3.5rem;opacity:0;animation:fadeUp .6s .8s forwards;align-items:center}
   .hero-ctas a{
-    font-size:.7rem;color:var(--soft);letter-spacing:.14em;text-transform:uppercase;
-    text-decoration:none;font-weight:400;display:flex;align-items:center;gap:.5rem;
-    border-bottom:1px solid transparent;padding-bottom:2px;transition:color .25s,border-color .25s;
+    font-size:1rem;color:var(--soft);letter-spacing:.1em;text-transform:uppercase;
+    text-decoration:none;font-weight:400;display:flex;align-items:center;gap:.8rem;
+    border-bottom:2px solid transparent;padding-bottom:4px;transition:color .25s,border-color .25s;
   }
   .hero-ctas a:hover{color:var(--accent);border-color:var(--accent)}
+  .hero-ctas a svg{width:26px;height:26px;flex-shrink:0;transition:color .25s}
   .scroll-line{
     width:1px;height:56px;background:linear-gradient(to bottom,var(--accent),transparent);
     margin:4rem auto 0;opacity:0;animation:fadeIn 1s 1.2s forwards;
@@ -226,7 +227,7 @@
   /* ── CONTACT OVERLAY ── */
   #contact-overlay{
     position:fixed;inset:0;z-index:500;
-    background:#0a0f18;
+    background:var(--bg);
     opacity:0;pointer-events:none;
     transition:opacity .5s ease;
     overflow-y:auto;
@@ -239,7 +240,7 @@
     font-family:var(--sans);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
     cursor:pointer;margin-bottom:5rem;padding:0;transition:color .25s;font-weight:400;
   }
-  .overlay-close:hover{color:var(--soft)}
+  .overlay-close:hover{color:var(--text)}
   .overlay-close-x{font-size:1.1rem;line-height:1}
   .contact-heading{
     font-family:var(--serif);font-size:clamp(3.5rem,7vw,6.5rem);
@@ -266,7 +267,7 @@
     padding:.65rem 0;outline:none;transition:border-color .25s;resize:none;border-radius:0;
   }
   .form-field input:focus,.form-field textarea:focus{border-color:var(--accent)}
-  .form-field input::placeholder,.form-field textarea::placeholder{color:var(--muted);opacity:.45;font-weight:300}
+  .form-field input::placeholder,.form-field textarea::placeholder{color:var(--muted);opacity:.6;font-weight:300}
   .submit-btn{
     display:inline-flex;align-items:center;gap:.7rem;
     background:transparent;border:1px solid rgba(138,106,42,.4);border-radius:2px;
@@ -364,9 +365,18 @@
       </div>
       <p class="hero-bio">Embedded Controls Engineer and PhD researcher blending hardware and software expertise to push the boundaries of embedded systems. Specializing in C/C++, real-time operating systems, PCB design, MEMS sensor integration, and industrial robotics — building reliable systems from factory floors to human-machine interfaces.</p>
       <div class="hero-ctas">
-        <a href="mailto:piyush.sharma10796@gmail.com"><span>✉</span> Email</a>
-        <a href="https://www.linkedin.com/in/i-piyush" target="_blank"><span>in</span> LinkedIn</a>
-        <a href="#experience"><span>↓</span> View work</a>
+        <a href="mailto:piyush.sharma10796@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+          Email
+        </a>
+        <a href="https://www.linkedin.com/in/i-piyush" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a href="#experience">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          View work
+        </a>
       </div>
       <div class="scroll-line"></div>
     </div>
