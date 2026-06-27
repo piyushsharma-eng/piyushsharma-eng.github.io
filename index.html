@@ -3,32 +3,32 @@
   
   *{margin:0;padding:0;box-sizing:border-box}
   :root{
-    --bg:#0a0a0a;--surface:#0f0f0f;--card:#161616;--border:#222;
-    --text:#e8e4dc;--muted:#4a4a4a;--soft:#8a8a7a;
-    --accent:#c8b89a;--accent2:#7ab8d4;
+    --bg:#edf0f5;--surface:#e2e7ef;--card:#dde3ec;--border:#c8d0dc;
+    --text:#0f1520;--muted:#6a7a8a;--soft:#3a4a5a;
+    --accent:#8a6a2a;--accent2:#2a5a8a;
     --serif:'Cormorant Garamond',Georgia,serif;
     --sans:'Inter',-apple-system,sans-serif;
   }
   html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;overflow-x:hidden;font-size:16px;line-height:1.6}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;overflow-x:hidden;font-size:17px;line-height:1.65}
   
   /* ── NAV ── */
   nav{
-    background:rgba(10,10,10,0.92);backdrop-filter:blur(20px);
-    border-bottom:1px solid var(--border);
+    background:rgba(10,10,10,0.96);backdrop-filter:blur(20px);
+    border-bottom:1px solid rgba(0,0,0,0.3);
     display:flex;justify-content:space-between;align-items:center;
     padding:1.2rem 3.5rem;position:sticky;top:0;z-index:200;
   }
-  .nav-name{font-family:var(--serif);font-size:1.2rem;font-weight:400;letter-spacing:.05em;color:var(--text);text-decoration:none}
+  .nav-name{font-family:var(--serif);font-size:1.2rem;font-weight:400;letter-spacing:.05em;color:#f1ede4;text-decoration:none}
   .nav-links{display:flex;gap:2.5rem;align-items:center}
-  .nav-links a{color:var(--muted);font-size:.7rem;text-decoration:none;letter-spacing:.16em;text-transform:uppercase;font-weight:400;transition:color .25s}
-  .nav-links a:hover{color:var(--soft)}
+  .nav-links a{color:#7d7a70;font-size:.7rem;text-decoration:none;letter-spacing:.16em;text-transform:uppercase;font-weight:400;transition:color .25s}
+  .nav-links a:hover{color:#c2bdb0}
   .nav-contact-btn{
-    color:var(--accent) !important;border:1px solid rgba(200,184,154,.25);
+    color:#d4c4a3 !important;border:1px solid rgba(200,184,154,.25);
     padding:.4rem 1.1rem;border-radius:2px;transition:background .25s,color .25s !important;
     cursor:pointer;background:transparent;
   }
-  .nav-contact-btn:hover{background:var(--accent) !important;color:#0a0a0a !important;border-color:var(--accent)}
+  .nav-contact-btn:hover{background:#d4c4a3 !important;color:#0a0a0a !important;border-color:#d4c4a3}
   
   /* ── HERO ── */
   .hero{
@@ -36,16 +36,23 @@
     padding:0 3.5rem 7rem;max-width:1080px;margin:0 auto;
     border-bottom:1px solid var(--border);
   }
-  .hero-tag{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-bottom:2.4rem;opacity:0;animation:fadeUp .6s .2s forwards;font-weight:400}
+  .hero-tag{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-bottom:2.4rem;opacity:0;animation:fadeUp .6s .2s forwards;font-weight:500}
   .hero-name{
-    font-family:var(--serif);font-size:clamp(5rem,10vw,9rem);
-    font-weight:300;line-height:.92;color:var(--text);letter-spacing:-.02em;
-    margin-bottom:3rem;opacity:0;animation:fadeUp .8s .35s forwards;
+    font-family:var(--serif);font-size:clamp(3.4rem,8vw,6.4rem);
+    font-weight:300;line-height:1;color:var(--text);letter-spacing:-.02em;
+    margin-bottom:2.6rem;opacity:0;animation:fadeUp .8s .35s forwards;white-space:nowrap;
   }
-  .hero-name span{display:block}
-  .hero-name span:last-child{font-style:italic}
+  .hero-name span:last-child{font-style:italic;margin-left:.3em}
+  .hero-stats{
+    display:flex;align-items:center;gap:.9rem;
+    margin-bottom:2.4rem;opacity:0;animation:fadeUp .6s .5s forwards;
+    flex-wrap:wrap;
+  }
+  .hero-stat{font-size:.8rem;color:var(--muted);font-weight:300;letter-spacing:.02em}
+  .hero-stat strong{color:var(--accent);font-weight:500;font-size:.9rem}
+  .hero-stat-dot{color:var(--border);font-size:.8rem}
   .hero-bio{
-    font-size:1.1rem;color:var(--soft);line-height:1.9;max-width:540px;
+    font-size:1.25rem;color:var(--soft);line-height:1.85;max-width:560px;
     margin-bottom:3.2rem;opacity:0;animation:fadeUp .6s .6s forwards;font-weight:300;
   }
   .hero-ctas{display:flex;gap:2.2rem;opacity:0;animation:fadeUp .6s .8s forwards;align-items:center}
@@ -88,11 +95,37 @@
   .label-caps{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:400}
   
   /* Body: inter light */
-  .body-text{font-size:.92rem;color:var(--soft);line-height:1.9;font-weight:300}
+  .body-text{font-size:1.02rem;color:var(--soft);line-height:1.9;font-weight:300}
   
   /* Meta: dates, schools */
-  .meta-text{font-size:.78rem;color:var(--muted);font-weight:300;letter-spacing:.02em}
+  .meta-text{font-size:.85rem;color:var(--muted);font-weight:300;letter-spacing:.02em}
   
+  /* ── STATS STRIP ── */
+  .stats-strip{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    border:1px solid var(--border);border-radius:4px;
+    margin:0 3.5rem;max-width:1080px;margin-left:auto;margin-right:auto;
+    overflow:hidden;
+  }
+  .stat-cell{
+    padding:3.2rem 2rem;text-align:center;position:relative;
+    transition:background .3s;
+  }
+  .stat-cell:not(:last-child)::after{
+    content:'';position:absolute;right:0;top:20%;height:60%;
+    width:1px;background:var(--border);
+  }
+  .stat-cell:hover{background:rgba(212,196,163,.03)}
+  .stat-num{
+    font-family:var(--serif);font-size:clamp(3rem,5vw,4.5rem);
+    font-weight:300;color:var(--accent);line-height:1;
+    letter-spacing:-.02em;display:block;margin-bottom:.8rem;
+  }
+  .stat-label{
+    font-size:.63rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--muted);font-weight:400;line-height:1.5;
+  }
+
   /* ── REVEAL ── */
   .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
   .reveal.visible{opacity:1;transform:translateY(0)}
@@ -104,10 +137,10 @@
     display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;
     cursor:pointer;transition:border-color .3s;position:relative;overflow:hidden;
   }
-  .video-placeholder:hover{border-color:rgba(200,184,154,.3)}
-  .play-btn{width:64px;height:64px;border-radius:50%;border:1px solid rgba(200,184,154,.35);display:flex;align-items:center;justify-content:center;transition:background .25s,transform .3s,border-color .25s}
-  .video-placeholder:hover .play-btn{background:rgba(200,184,154,.07);transform:scale(1.1);border-color:var(--accent)}
-  .play-icon{width:0;height:0;border-top:9px solid transparent;border-bottom:9px solid transparent;border-left:16px solid rgba(200,184,154,.6);margin-left:5px}
+  .video-placeholder:hover{border-color:rgba(138,106,42,.4)}
+  .play-btn{width:64px;height:64px;border-radius:50%;border:1px solid rgba(138,106,42,.35);display:flex;align-items:center;justify-content:center;transition:background .25s,transform .3s,border-color .25s}
+  .video-placeholder:hover .play-btn{background:rgba(138,106,42,.07);transform:scale(1.1);border-color:var(--accent)}
+  .play-icon{width:0;height:0;border-top:9px solid transparent;border-bottom:9px solid transparent;border-left:16px solid rgba(138,106,42,.6);margin-left:5px}
   .video-label{font-size:.68rem;color:var(--muted);letter-spacing:.14em;text-transform:uppercase}
   
   /* ── TIMELINE ── */
@@ -117,12 +150,12 @@
     padding:3.5rem 0;border-bottom:1px solid var(--border);
   }
   .timeline-item:first-child{border-top:1px solid var(--border)}
-  .t-date{font-size:.74rem;color:var(--muted);line-height:1.7;font-weight:300;padding-top:.35rem}
-  .t-co{font-size:.63rem;text-transform:uppercase;letter-spacing:.18em;color:var(--accent);margin-top:.7rem;font-weight:400}
-  .t-desc{font-size:.92rem;color:var(--soft);line-height:1.9;font-weight:300;margin-top:.7rem}
+  .t-date{font-size:.82rem;color:var(--muted);line-height:1.7;font-weight:300;padding-top:.35rem}
+  .t-co{font-size:.68rem;text-transform:uppercase;letter-spacing:.18em;color:var(--accent);margin-top:.7rem;font-weight:400}
+  .t-desc{font-size:1.02rem;color:var(--soft);line-height:1.85;font-weight:300;margin-top:.7rem}
   .t-tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.2rem}
   .tag{border:1px solid var(--border);border-radius:2px;font-size:.64rem;letter-spacing:.07em;color:var(--muted);padding:.22rem .6rem;font-weight:300;transition:color .2s,border-color .2s}
-  .tag:hover{color:var(--soft);border-color:#333}
+  .tag:hover{color:var(--soft);border-color:#a0aabb}
   
   /* IMG PLACEHOLDER */
   .img-placeholder{
@@ -131,58 +164,69 @@
     font-size:.66rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;
     margin-top:1.4rem;cursor:pointer;transition:border-color .25s;position:relative;
   }
-  .img-placeholder:hover{border-color:#2a2a2a}
-  .img-placeholder::after{content:'+ image';position:absolute;bottom:12px;right:14px;font-size:.6rem;color:rgba(200,184,154,.2);letter-spacing:.1em}
+  .img-placeholder:hover{border-color:#a0aabb}
+  .img-placeholder::after{content:'+ image';position:absolute;bottom:12px;right:14px;font-size:.6rem;color:rgba(138,106,42,.3);letter-spacing:.1em}
   
+  /* ── 3-IMAGE STRIP ── */
+  .img-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-top:1.4rem}
+  .img-strip img{width:100%;height:180px;object-fit:cover;border-radius:3px;border:1px solid var(--border);display:block;transition:opacity .25s}
+  .img-strip img:hover{opacity:.88}
+
+  /* ── PROJ SECOND IMAGE ── */
+  .proj-img-bottom{margin-top:1.2rem;border-radius:3px;overflow:hidden;border:1px solid var(--border)}
+  .proj-img-bottom img{width:100%;height:160px;object-fit:cover;display:block}
+
   /* ── EDUCATION ── */
   .edu-item{display:flex;justify-content:space-between;align-items:flex-start;padding:2.2rem 0;border-bottom:1px solid var(--border);transition:padding-left .3s}
   .edu-item:first-child{border-top:1px solid var(--border)}
   .edu-item:hover{padding-left:.6rem}
-  .edu-degree{font-family:var(--serif);font-size:1.35rem;font-weight:300;color:var(--text);margin-bottom:.35rem;line-height:1.25;letter-spacing:-.01em}
-  .edu-school{font-size:.8rem;color:var(--soft);font-weight:300}
-  .edu-year{font-size:.72rem;color:var(--muted);text-align:right;min-width:120px;padding-top:.3rem;font-weight:300;flex-shrink:0}
+  .edu-degree{font-family:var(--serif);font-size:1.5rem;font-weight:300;color:var(--text);margin-bottom:.35rem;line-height:1.25;letter-spacing:-.01em}
+  .edu-school{font-size:.9rem;color:var(--soft);font-weight:300}
+  .edu-year{font-size:.8rem;color:var(--muted);text-align:right;min-width:120px;padding-top:.3rem;font-weight:300;flex-shrink:0}
   
   /* ── SKILLS ── */
   .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
   .skill-card{border:1px solid var(--border);border-radius:3px;padding:2rem;transition:border-color .25s}
-  .skill-card:hover{border-color:#2a2a2a}
+  .skill-card:hover{border-color:#a0aabb}
   .skill-card-title{font-size:.63rem;text-transform:uppercase;letter-spacing:.2em;color:var(--accent);margin-bottom:1.6rem;font-weight:400}
   .skill-list{list-style:none}
-  .skill-list li{font-size:.88rem;color:var(--soft);padding:.32rem 0;border-bottom:1px solid var(--border);line-height:1.5;font-weight:300;display:flex;align-items:center;gap:.6rem;transition:color .2s}
+  .skill-list li{font-size:.98rem;color:var(--soft);padding:.32rem 0;border-bottom:1px solid var(--border);line-height:1.5;font-weight:300;display:flex;align-items:center;gap:.6rem;transition:color .2s}
   .skill-list li:last-child{border-bottom:none}
-  .skill-list li::before{content:'';width:3px;height:3px;border-radius:50%;background:var(--accent);opacity:.35;flex-shrink:0}
+  .skill-list li::before{content:'';width:3px;height:3px;border-radius:50%;background:var(--accent);opacity:.6;flex-shrink:0}
   .skill-list li:hover{color:var(--text)}
   
   /* ── PROJECTS ── */
-  .proj-grid{display:grid;gap:1.5rem}
-  .proj-card{border:1px solid var(--border);border-radius:3px;overflow:hidden;transition:border-color .3s,transform .3s;cursor:pointer}
-  .proj-card:hover{border-color:#2a2a2a;transform:translateY(-4px)}
-  .proj-thumb{width:100%;height:220px;background:var(--card);display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--border);position:relative}
+  .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:stretch;}
+  .proj-card{border:1px solid var(--border);border-radius:3px;overflow:hidden;transition:border-color .3s,transform .3s;cursor:pointer;display:flex;flex-direction:column;}
+  .proj-card:hover{border-color:#a0aabb;transform:translateY(-4px)}
+  .proj-thumb{width:100%;height:180px;background:var(--card);display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--border);position:relative;flex-shrink:0}
   .proj-thumb-label{font-size:.63rem;color:var(--muted);letter-spacing:.1em;position:absolute;bottom:12px;right:14px;text-transform:uppercase}
   .proj-thumb-icon{font-size:1.8rem;opacity:.07}
-  .proj-body{padding:2rem 2.2rem}
-  .proj-desc{font-size:.9rem;color:var(--soft);line-height:1.88;font-weight:300;margin-top:.6rem}
+  .proj-body{padding:1.8rem 2rem;display:flex;flex-direction:column;flex:1}
+  .proj-desc{font-size:.92rem;color:var(--soft);line-height:1.8;font-weight:300;margin-top:.6rem;flex:1}
   .proj-tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.2rem}
   
+  @media(max-width:860px){.proj-grid{grid-template-columns:1fr}}
+
   /* ── AWARDS ── */
   .award-item{display:grid;grid-template-columns:54px 1fr;gap:1.6rem;align-items:start;padding:2.2rem 0;border-bottom:1px solid var(--border);transition:padding-left .25s}
   .award-item:first-child{border-top:1px solid var(--border)}
   .award-item:hover{padding-left:.5rem}
-  .award-icon{width:50px;height:50px;border-radius:3px;background:rgba(200,184,154,.04);border:1px solid rgba(200,184,154,.1);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
-  .award-meta{font-size:.78rem;color:var(--soft);line-height:1.65;font-weight:300;margin-top:.3rem}
+  .award-icon{width:50px;height:50px;border-radius:3px;background:rgba(138,106,42,.06);border:1px solid rgba(138,106,42,.2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+  .award-meta{font-size:.85rem;color:var(--soft);line-height:1.65;font-weight:300;margin-top:.3rem}
   
   /* ── CERTS ── */
   .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem}
   .cert-card{border:1px solid var(--border);border-radius:3px;padding:1.6rem 1.8rem;transition:border-color .25s,transform .25s;display:flex;flex-direction:column;gap:.5rem}
-  .cert-card:hover{border-color:#2a2a2a;transform:translateY(-2px)}
+  .cert-card:hover{border-color:#a0aabb;transform:translateY(-2px)}
   .cert-issuer{font-size:.63rem;text-transform:uppercase;letter-spacing:.18em;color:var(--accent);font-weight:400}
-  .cert-name{font-family:var(--serif);font-size:1.1rem;color:var(--text);line-height:1.35;font-weight:300}
-  .cert-year{font-size:.72rem;color:var(--muted);font-weight:300}
+  .cert-name{font-family:var(--serif);font-size:1.25rem;color:var(--text);line-height:1.35;font-weight:300}
+  .cert-year{font-size:.8rem;color:var(--muted);font-weight:300}
   
   /* ── CONTACT OVERLAY ── */
   #contact-overlay{
     position:fixed;inset:0;z-index:500;
-    background:#0a0a0a;
+    background:#0a0f18;
     opacity:0;pointer-events:none;
     transition:opacity .5s ease;
     overflow-y:auto;
@@ -207,7 +251,7 @@
   .contact-info-row:first-child{border-top:1px solid var(--border)}
   .contact-info-row:hover{padding-left:.4rem}
   .ci-label{font-size:.63rem;text-transform:uppercase;letter-spacing:.18em;color:var(--muted);font-weight:400;width:80px;flex-shrink:0}
-  .ci-val{font-size:.92rem;color:var(--soft);font-weight:300}
+  .ci-val{font-size:1rem;color:var(--soft);font-weight:300}
   .ci-val a{color:var(--accent2);text-decoration:none;transition:color .2s}
   .ci-val a:hover{color:var(--text)}
   .form-divider{border-top:1px solid var(--border);margin:4rem 0}
@@ -225,14 +269,14 @@
   .form-field input::placeholder,.form-field textarea::placeholder{color:var(--muted);opacity:.45;font-weight:300}
   .submit-btn{
     display:inline-flex;align-items:center;gap:.7rem;
-    background:transparent;border:1px solid rgba(200,184,154,.28);border-radius:2px;
+    background:transparent;border:1px solid rgba(138,106,42,.4);border-radius:2px;
     color:var(--accent);font-family:var(--sans);font-size:.7rem;font-weight:400;
     letter-spacing:.16em;text-transform:uppercase;padding:.9rem 2.2rem;
     cursor:pointer;transition:background .25s,color .25s,border-color .25s;width:fit-content;
   }
-  .submit-btn:hover{background:var(--accent);color:#0a0a0a;border-color:var(--accent)}
+  .submit-btn:hover{background:var(--accent);color:#ffffff;border-color:var(--accent)}
   
-  footer{text-align:center;padding:2.5rem;font-size:.63rem;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;font-weight:300;border-top:1px solid var(--border)}
+  footer{text-align:center;padding:2.5rem;font-size:.63rem;color:#7d7a70;letter-spacing:.14em;text-transform:uppercase;font-weight:300;border-top:none;background:#0a0a0a}
   </style>
   
   <!-- CONTACT OVERLAY (separate layer) -->
@@ -309,7 +353,16 @@
         <span>Piyush</span>
         <span>Sharma</span>
       </h1>
-      <p class="hero-bio">PhD researcher and engineer bridging the gap between firmware, robotics, and real-world automation. From factory floors to human-machine interfaces, I build systems that work.</p>
+      <div class="hero-stats">
+        <span class="hero-stat"><strong>5+</strong> years experience</span>
+        <span class="hero-stat-dot">·</span>
+        <span class="hero-stat"><strong>4</strong> companies</span>
+        <span class="hero-stat-dot">·</span>
+        <span class="hero-stat"><strong>2</strong> production lines built</span>
+        <span class="hero-stat-dot">·</span>
+        <span class="hero-stat"><strong>3</strong> degrees</span>
+      </div>
+      <p class="hero-bio">Embedded Controls Engineer and PhD researcher blending hardware and software expertise to push the boundaries of embedded systems. Specializing in C/C++, real-time operating systems, PCB design, MEMS sensor integration, and industrial robotics — building reliable systems from factory floors to human-machine interfaces.</p>
       <div class="hero-ctas">
         <a href="mailto:piyush.sharma10796@gmail.com"><span>✉</span> Email</a>
         <a href="https://www.linkedin.com/in/i-piyush" target="_blank"><span>in</span> LinkedIn</a>
@@ -322,7 +375,7 @@
   <!-- INTRO VIDEO -->
   <div class="section-divider">
     <div class="section-wrap reveal">
-      <span class="eyebrow">Intro reel</span>
+      <h2 class="section-title" style="margin-bottom:2.5rem">Intro Reel</h2>
       <div class="video-placeholder">
         <div class="play-btn"><div class="play-icon"></div></div>
         <div class="video-label">Your intro / work video</div>
@@ -334,8 +387,7 @@
   <div class="section-divider" id="experience">
     <div class="section-wrap">
       <div class="reveal">
-        <span class="eyebrow">Work experience</span>
-        <h2 class="section-title">Where I've built things</h2>
+        <h2 class="section-title">Experience</h2>
       </div>
       <ul class="timeline">
   
@@ -347,7 +399,11 @@
           <div>
             <div class="item-title">Embedded &amp; Controls Engineer</div>
             <p class="t-desc">Developed C/C++ firmware with HAL-based timer control, encoder input capture, and an in-house S-curve motion algorithm to improve motor speed accuracy. Led ABB 6-axis robot programming; designed recipe-based control systems improving cycle times. Deployed two full production lines end-to-end — PLCs, HMI, EtherNet/IP, and Keyence vision sensors.</p>
-            <div class="img-placeholder">Work image — Brillouin Energy lab / production floor</div>
+            <div class="img-strip">
+              <img src="images/BEC1.jpg" alt="Brillouin Energy — production floor">
+              <img src="images/BEC2.jpg" alt="Brillouin Energy — lab">
+              <img src="images/BEC3.jpg" alt="Brillouin Energy — controls">
+            </div>
             <div class="t-tags">
               <span class="tag">C/C++</span><span class="tag">ABB RAPID</span><span class="tag">EtherNet/IP</span>
               <span class="tag">PLC / HMI</span><span class="tag">S-curve Motion</span><span class="tag">Keyence Vision</span>
@@ -388,7 +444,7 @@
         <li class="timeline-item reveal">
           <div>
             <div class="t-date">Jun 2017 — Dec 2017</div>
-            <div class="t-co">Bhushan Power &amp; Steel</div>
+            <div class="t-co">JSW Steel</div>
           </div>
           <div>
             <div class="item-title">Hardware Engineer Intern</div>
@@ -399,17 +455,28 @@
             </div>
           </div>
         </li>
-  
+
+        <li class="timeline-item reveal">
+          <div>
+            <div class="t-date">Jun 2016 — Jul 2016</div>
+            <div class="t-co">Bhakra Beas Management Board</div>
+          </div>
+          <div>
+            <div class="item-title">Electrical Engineer Intern</div>
+            <p class="t-desc">Early-career internship with a major hydroelectric power authority in Nangal, Punjab. Gained hands-on exposure to large-scale electrical infrastructure, power distribution systems, and field operations at one of India's most significant power generation facilities.</p>
+            <div class="t-tags">
+              <span class="tag">Power Systems</span><span class="tag">Electrical Infrastructure</span><span class="tag">Field Operations</span>
+            </div>
+          </div>
+        </li>
+
       </ul>
     </div>
   </div>
-  
-  <!-- EDUCATION -->
   <div class="section-divider" id="education">
     <div class="section-wrap">
       <div class="reveal">
-        <span class="eyebrow">Education</span>
-        <h2 class="section-title">Academic background</h2>
+        <h2 class="section-title">Education</h2>
       </div>
       <div class="reveal">
         <div class="edu-item">
@@ -441,8 +508,7 @@
   <div class="section-divider" id="skills">
     <div class="section-wrap">
       <div class="reveal">
-        <span class="eyebrow">Technical skills</span>
-        <h2 class="section-title">What I work with</h2>
+        <h2 class="section-title">Technical Skills</h2>
       </div>
       <div class="skills-grid">
         <div class="skill-card reveal">
@@ -475,31 +541,55 @@
   <div class="section-divider" id="projects">
     <div class="section-wrap">
       <div class="reveal">
-        <span class="eyebrow">Projects</span>
-        <h2 class="section-title">Selected work</h2>
+        <h2 class="section-title">Selected Work</h2>
       </div>
       <div class="proj-grid">
+
+        <!-- Project 1: VLM -->
         <div class="proj-card reveal">
           <div class="proj-thumb">
             <div class="proj-thumb-icon">◈</div>
             <div class="proj-thumb-label">+ image / video</div>
           </div>
           <div class="proj-body">
-            <div class="item-title">Autonomous car using CAN Bus</div>
-            <p class="proj-desc">Self-navigating vehicle using ARM Cortex-M4 microcontrollers communicating over CAN Bus with FreeRTOS. Non-preemptive real-time task scheduling with sensor fusion — accelerometers, gyroscopes, wheel encoders, GPS — achieving 30% improvement in navigation accuracy.</p>
+            <span class="label-caps" style="margin-bottom:.8rem;display:block">Robotics · Vision AI</span>
+            <div class="item-title" style="font-size:1.35rem">Robotics Vision-Language Pipeline</div>
+            <p class="proj-desc">Perception pipeline for a robotic arm running fully locally on Apple Silicon. Integrated a quantized VLM (Qwen 3.6B via MLX) for natural-language-driven object detection and SAM 3.1 for pixel-level segmentation. Implemented 3D object localization using camera intrinsics, depth data, and rigid transforms to robot world frame, with ROS2 for motion planning.</p>
             <div class="proj-tags">
+              <span class="tag">Qwen VLM</span><span class="tag">SAM 3.1</span><span class="tag">MLX</span>
+              <span class="tag">ROS2</span><span class="tag">Apple Silicon</span><span class="tag">Depth Estimation</span><span class="tag">Robot Kinematics</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Autonomous Car -->
+        <div class="proj-card reveal" style="transition-delay:.1s">
+          <div class="proj-thumb" style="height:220px;overflow:hidden;">
+            <img src="images/RC2.JPG" alt="Autonomous car with electronics" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+          </div>
+          <div class="proj-body">
+            <span class="label-caps" style="margin-bottom:.8rem;display:block">Embedded · Autonomous</span>
+            <div class="item-title" style="font-size:1.35rem">Autonomous Car using CAN Bus</div>
+            <p class="proj-desc">Self-navigating vehicle using ARM Cortex-M4 microcontrollers communicating over CAN Bus with FreeRTOS. Non-preemptive real-time task scheduling with sensor fusion — accelerometers, gyroscopes, wheel encoders, GPS — achieving 30% improvement in navigation accuracy.</p>
+            <div class="proj-img-bottom">
+              <img src="images/RC1.JPEG" alt="Custom PCB wiring for autonomous car">
+            </div>
+            <div class="proj-tags" style="margin-top:1rem;">
               <span class="tag">ARM Cortex-M4</span><span class="tag">CAN Bus</span>
               <span class="tag">FreeRTOS</span><span class="tag">Sensor Fusion</span>
             </div>
           </div>
         </div>
-        <div class="proj-card reveal" style="transition-delay:.1s">
+
+        <!-- Project 3: Linux FS -->
+        <div class="proj-card reveal" style="transition-delay:.2s">
           <div class="proj-thumb">
             <div class="proj-thumb-icon">◈</div>
             <div class="proj-thumb-label">+ image / video</div>
           </div>
           <div class="proj-body">
-            <div class="item-title">Linux file system design</div>
+            <span class="label-caps" style="margin-bottom:.8rem;display:block">Systems · Linux</span>
+            <div class="item-title" style="font-size:1.35rem">Linux File System Design</div>
             <p class="proj-desc">Led a team of 4 to design a custom Volume Control Block file system with comprehensive metadata management and full file and directory operations, built from scratch with emphasis on correctness and system-level fundamentals.</p>
             <div class="proj-tags">
               <span class="tag">Linux</span><span class="tag">Systems Programming</span>
@@ -507,6 +597,7 @@
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>
@@ -515,7 +606,6 @@
   <div class="section-divider" id="awards">
     <div class="section-wrap">
       <div class="reveal">
-        <span class="eyebrow">Awards &amp; achievements</span>
         <h2 class="section-title">Recognition</h2>
       </div>
       <div class="reveal">
@@ -541,24 +631,18 @@
   <div class="section-divider" id="certifications">
     <div class="section-wrap">
       <div class="reveal">
-        <span class="eyebrow">Certifications</span>
-        <h2 class="section-title">Credentials</h2>
+        <h2 class="section-title">Certifications</h2>
       </div>
       <div class="cert-grid">
         <div class="cert-card reveal">
-          <div class="cert-issuer">Add issuer</div>
-          <div class="cert-name">Certification name goes here</div>
-          <div class="cert-year">Year</div>
+          <div class="cert-issuer">Edge Impulse / Coursera</div>
+          <div class="cert-name">Embedded Machine Learning</div>
+          <div class="cert-year">—</div>
         </div>
         <div class="cert-card reveal" style="transition-delay:.1s">
-          <div class="cert-issuer">Add issuer</div>
-          <div class="cert-name">Certification name goes here</div>
-          <div class="cert-year">Year</div>
-        </div>
-        <div class="cert-card reveal" style="transition-delay:.2s">
-          <div class="cert-issuer">Add issuer</div>
-          <div class="cert-name">Certification name goes here</div>
-          <div class="cert-year">Year</div>
+          <div class="cert-issuer">Coursera / Python Institute</div>
+          <div class="cert-name">Python 3</div>
+          <div class="cert-year">—</div>
         </div>
       </div>
     </div>
