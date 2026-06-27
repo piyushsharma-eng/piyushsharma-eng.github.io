@@ -101,7 +101,8 @@
   .timeline-item{display:grid;grid-template-columns:180px 1fr;gap:3.5rem;padding:3.5rem 0;border-bottom:1px solid var(--border);}
   .timeline-item:first-child{border-top:1px solid var(--border)}
   .t-date{font-size:.82rem;color:var(--muted);line-height:1.7;font-weight:300;padding-top:.35rem}
-  .t-co{font-size:.68rem;text-transform:uppercase;letter-spacing:.18em;color:var(--accent);margin-top:.7rem;font-weight:400}
+  .t-co{font-size:.68rem;text-transform:uppercase;letter-spacing:.18em;color:var(--accent);margin-top:.5rem;font-weight:400}
+  .co-logo{width:48px;height:48px;object-fit:contain;border-radius:4px;display:block;margin-bottom:.5rem}
   .t-desc{font-size:1.02rem;color:var(--soft);line-height:1.85;font-weight:300;margin-top:.7rem}
   .t-tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.2rem}
   .tag{border:1px solid var(--border);border-radius:2px;font-size:.64rem;letter-spacing:.07em;color:var(--muted);padding:.22rem .6rem;font-weight:300;transition:color .2s,border-color .2s}
@@ -286,6 +287,7 @@
     <ul class="timeline">
       <li class="timeline-item reveal">
         <div>
+          <img class="co-logo" src="images/BEClogo.jpeg" alt="Brillouin Energy">
           <div class="t-date">Sep 2024 — Present</div>
           <div class="t-co">Brillouin Energy</div>
         </div>
@@ -305,6 +307,7 @@
       </li>
       <li class="timeline-item reveal">
         <div>
+          <img class="co-logo" src="images/neurologo.jpeg" alt="NeuroLeap Corp.">
           <div class="t-date">Jan 2024 — Sep 2024</div>
           <div class="t-co">NeuroLeap Corp.</div>
         </div>
@@ -333,6 +336,7 @@
       </li>
       <li class="timeline-item reveal">
         <div>
+          <img class="co-logo" src="images/jswlogo.jpeg" alt="JSW Steel">
           <div class="t-date">Jun 2017 — Dec 2017</div>
           <div class="t-co">JSW Steel</div>
         </div>
@@ -347,6 +351,7 @@
       </li>
       <li class="timeline-item reveal">
         <div>
+          <img class="co-logo" src="images/BBMBlogo.jpeg" alt="Bhakra Beas Management Board">
           <div class="t-date">Jun 2016 — Jul 2016</div>
           <div class="t-co">Bhakra Beas Management Board</div>
         </div>
@@ -429,9 +434,8 @@
     <div class="reveal"><h2 class="section-title">Projects</h2></div>
     <div class="proj-grid">
       <div class="proj-card reveal">
-        <div class="proj-thumb">
-          <div class="proj-thumb-icon">◈</div>
-          <div class="proj-thumb-label">+ image / video</div>
+        <div class="proj-thumb" style="height:220px;overflow:hidden;">
+          <img src="images/SAM1.jpeg" alt="Robotics Vision Pipeline" style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>
         <div class="proj-body">
           <span class="label-caps" style="margin-bottom:.8rem;display:block">Robotics · Vision AI</span>
