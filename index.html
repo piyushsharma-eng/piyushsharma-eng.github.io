@@ -183,13 +183,13 @@
     #nav-links{
       display:none;flex-direction:column;align-items:flex-start;gap:0;
       position:fixed;top:0;right:0;bottom:0;width:72vw;max-width:300px;
-      background:rgba(10,11,16,0.98);backdrop-filter:blur(20px);
+      background:#0d0f15;backdrop-filter:blur(20px);
       padding:5rem 2rem 2rem;z-index:250;
-      border-left:1px solid var(--border);
+      border-left:1px solid rgba(255,255,255,0.1);
       transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);
     }
     #nav-links.mobile-open{display:flex;transform:translateX(0)}
-    #nav-links a{font-size:.9rem;letter-spacing:.1em;padding:.9rem 0;border-bottom:1px solid var(--border);width:100%;color:var(--soft);}
+    #nav-links a{font-size:.9rem;letter-spacing:.1em;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,0.08);width:100%;color:var(--text);}
     #nav-links a:last-of-type{border-bottom:none}
     .nav-contact-btn{margin-top:1.5rem;width:100%;text-align:center;padding:.7rem 1rem !important}
 
