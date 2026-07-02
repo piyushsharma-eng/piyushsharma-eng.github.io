@@ -67,7 +67,9 @@
   }
   .hero-tag{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-bottom:2.4rem;font-weight:500}
   .hero-name{font-family:var(--serif);font-size:clamp(3.4rem,8vw,6.4rem);font-weight:300;line-height:1;color:var(--text);letter-spacing:-.02em;margin-bottom:2.6rem;white-space:nowrap;}
-  .hero-name span:last-child{margin-left:.3em}
+  .hero-name .word{display:inline-block;overflow:hidden;padding-bottom:.12em;margin-bottom:-.12em;vertical-align:top}
+  .hero-name .word:last-child{margin-left:.3em}
+  .hero-name .word span{display:inline-block}
   .hero-stats{display:flex;align-items:center;gap:.9rem;margin-bottom:2.4rem;flex-wrap:wrap;}
   .hero-stat{font-size:.8rem;color:var(--muted);font-weight:300;letter-spacing:.02em}
   .hero-stat strong{color:var(--accent);font-weight:500;font-size:.9rem}
@@ -97,10 +99,12 @@
   .tag:hover{color:var(--soft);border-color:#3a4050}
 
   .img-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-top:1.4rem}
-  .img-strip img{width:100%;height:180px;object-fit:cover;border-radius:3px;border:1px solid var(--border);display:block;transition:opacity .25s}
-  .img-strip img:hover{opacity:.85}
+  .img-frame{overflow:hidden;border-radius:3px;border:1px solid var(--border)}
+  .img-strip img{width:100%;height:180px;object-fit:cover;display:block;filter:grayscale(20%);transition:transform .6s ease,filter .6s ease}
+  .img-frame:hover img,.img-strip img:focus-visible{transform:scale(1.05);filter:grayscale(0)}
   .proj-img-bottom{margin-top:1.2rem;border-radius:3px;overflow:hidden;border:1px solid var(--border)}
-  .proj-img-bottom img{width:100%;height:160px;object-fit:cover;display:block}
+  .proj-img-bottom img{width:100%;height:160px;object-fit:cover;display:block;transition:transform .6s ease}
+  .proj-img-bottom:hover img{transform:scale(1.05)}
 
   .edu-item{display:flex;justify-content:space-between;align-items:center;padding:2.2rem 0;border-bottom:1px solid var(--border);transition:padding-left .3s;gap:1.5rem}
   .edu-item:first-child{border-top:1px solid var(--border)}
@@ -124,7 +128,9 @@
   .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:stretch;}
   .proj-card{border:1px solid var(--border);border-radius:3px;overflow:hidden;transition:border-color .3s,transform .3s;cursor:pointer;display:flex;flex-direction:column;}
   .proj-card:hover{border-color:#3a4050;transform:translateY(-4px)}
-  .proj-thumb{width:100%;height:180px;background:var(--card);display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--border);position:relative;flex-shrink:0}
+  .proj-thumb{width:100%;height:180px;background:var(--card);display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--border);position:relative;flex-shrink:0;overflow:hidden}
+  .proj-thumb img{transition:transform .6s ease}
+  .proj-card:hover .proj-thumb img{transform:scale(1.05)}
   .proj-thumb-label{font-size:.63rem;color:var(--muted);letter-spacing:.1em;position:absolute;bottom:12px;right:14px;text-transform:uppercase}
   .proj-thumb-icon{font-size:1.8rem;opacity:.07}
   .proj-body{padding:1.8rem 2rem;display:flex;flex-direction:column;flex:1}
@@ -334,7 +340,7 @@
   <div class="hero">
     <div class="hero-status"><span class="status-dot"></span>Currently: PhD Researcher · Santa Clara University</div>
     <div class="hero-tag">Embedded Systems &nbsp;·&nbsp; Robotics &nbsp;·&nbsp; Controls</div>
-    <h1 class="hero-name"><span>Piyush</span><span>Sharma</span></h1>
+    <h1 class="hero-name"><span class="word"><span>Piyush</span></span><span class="word"><span>Sharma</span></span></h1>
     <div class="hero-stats">
       <span class="hero-stat"><strong data-count="5" data-suffix="+">5+</strong> years experience</span>
       <span class="hero-stat-dot">·</span>
@@ -368,9 +374,9 @@
           <div class="item-title">Embedded &amp; Controls Engineer</div>
           <p class="t-desc">Developed C/C++ firmware with HAL-based timer control, encoder input capture, and an in-house S-curve motion algorithm to improve motor speed accuracy. Led ABB 6-axis robot programming; designed recipe-based control systems improving cycle times. Deployed two full production lines end-to-end — PLCs, HMI, EtherNet/IP, and Keyence vision sensors.</p>
           <div class="img-strip">
-            <img loading="lazy" src="images/BEC1.jpeg" alt="Brillouin Energy production floor">
-            <img loading="lazy" src="images/BEC2.jpeg" alt="Brillouin Energy lab">
-            <img loading="lazy" src="images/BEC3.jpeg" alt="Brillouin Energy controls">
+            <div class="img-frame"><img loading="lazy" src="images/BEC1.jpeg" alt="Brillouin Energy production floor"></div>
+            <div class="img-frame"><img loading="lazy" src="images/BEC2.jpeg" alt="Brillouin Energy lab"></div>
+            <div class="img-frame"><img loading="lazy" src="images/BEC3.jpeg" alt="Brillouin Energy controls"></div>
           </div>
           <div class="t-tags">
             <span class="tag">C/C++</span><span class="tag">ABB RAPID</span><span class="tag">EtherNet/IP</span>
@@ -388,8 +394,8 @@
           <div class="item-title">Firmware Engineer Intern</div>
           <p class="t-desc">Led firmware development for low-power embedded systems using Zephyr RTOS. Designed MEMS sensor interface circuits over I2C and SPI, reducing integration time by 20%. Performed board bring-up, signal validation, and debugging with JTAG and oscilloscope.</p>
           <div class="img-strip" style="grid-template-columns:repeat(2,1fr)">
-            <img loading="lazy" src="images/neuro.jpeg" alt="NeuroLeap lab bench">
-            <img loading="lazy" src="images/BEC8.jpeg" alt="NeuroLeap board bring-up">
+            <div class="img-frame"><img loading="lazy" src="images/neuro.jpeg" alt="NeuroLeap lab bench"></div>
+            <div class="img-frame"><img loading="lazy" src="images/BEC8.jpeg" alt="NeuroLeap board bring-up"></div>
           </div>
           <div class="t-tags">
             <span class="tag">Zephyr RTOS</span><span class="tag">MEMS Sensors</span>
@@ -629,8 +635,8 @@ heroTl
   .from('.hero-status',{y:16}, '<')
   .to('.hero-tag',    {opacity:1, y:0, duration:.7}, 'start+=.15')
   .from('.hero-tag',  {y:24}, '<')
-  .to('.hero-name',   {opacity:1, duration:.9}, 'start+=.3')
-  .from('.hero-name', {y:32}, '<')
+  .to('.hero-name',   {opacity:1, duration:.15}, 'start+=.25')
+  .from('.hero-name .word span', {yPercent:112, duration:1.1, stagger:.14, ease:'power4.out'}, 'start+=.25')
   .to('.hero-stats',  {opacity:1, duration:.6}, 'start+=.55')
   .from('.hero-stats',{y:20}, '<')
   .to('.hero-bio',    {opacity:1, duration:.6}, 'start+=.7')
@@ -643,7 +649,7 @@ heroTl
       const target = +el.dataset.count, suffix = el.dataset.suffix || '', dur = 900;
       const start = performance.now();
       const tick = now => {
-        const p = Math.min((now - start) / dur, 1);
+        const p = Math.max(0, Math.min((now - start) / dur, 1));
         el.textContent = Math.floor(p * target) + (p < 1 ? '' : suffix);
         if (p < 1) requestAnimationFrame(tick);
         else el.textContent = target + suffix;
@@ -678,8 +684,11 @@ gsap.utils.toArray('.proj-card').forEach((card, i) => {
 gsap.utils.toArray('.award-item, .cert-card').forEach((el, i) => {
   gsap.from(el, {opacity:0, y:24, duration:.6, delay:i*.1, ease:'power2.out', scrollTrigger:{trigger:el, start:'top 88%', toggleActions:'play none none none'}});
 });
-gsap.utils.toArray('.img-strip img').forEach((img, i) => {
-  gsap.from(img, {opacity:0, scale:.95, duration:.7, delay:i*.1, ease:'power2.out', scrollTrigger:{trigger:img, start:'top 90%', toggleActions:'play none none none'}});
+gsap.utils.toArray('.img-frame').forEach((frame, i) => {
+  gsap.from(frame, {opacity:0, y:24, duration:.7, delay:(i%3)*.1, ease:'power2.out', scrollTrigger:{trigger:frame, start:'top 90%', toggleActions:'play none none none'}});
+});
+gsap.utils.toArray('.t-tags, .proj-tags').forEach(group => {
+  gsap.from(group.children, {opacity:0, y:10, duration:.45, stagger:.045, ease:'power2.out', scrollTrigger:{trigger:group, start:'top 94%', toggleActions:'play none none none'}});
 });
 } /* end gsap guard */
 
@@ -723,6 +732,9 @@ function openContact(){
   contactReturnFocus=document.activeElement;
   const o=document.getElementById('contact-overlay');
   o.classList.add('open');document.body.style.overflow='hidden';o.scrollTop=0;
+  if(window.gsap && !reduceMotion){
+    gsap.fromTo('#contact-overlay .overlay-inner > *',{opacity:0,y:24},{opacity:1,y:0,duration:.6,stagger:.07,ease:'power3.out',delay:.1,overwrite:true});
+  }
   o.querySelector('.overlay-close').focus();
 }
 function closeContact(){
