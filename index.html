@@ -8,11 +8,31 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <meta name="referrer" content="no-referrer-when-downgrade">
-</head>
-<body>
+  <meta name="description" content="Piyush Sharma — Embedded Controls Engineer and PhD researcher specializing in C/C++, real-time operating systems, PCB design, MEMS sensors, and industrial robotics.">
+  <link rel="canonical" href="https://piyushsharma-eng.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://piyushsharma-eng.github.io/">
+  <meta property="og:title" content="Piyush Sharma — Embedded Systems Engineer">
+  <meta property="og:description" content="Embedded Controls Engineer and PhD researcher specializing in C/C++, RTOS, PCB design, MEMS sensors, and industrial robotics.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Piyush Sharma — Embedded Systems Engineer">
+  <meta name="twitter:description" content="Embedded Controls Engineer and PhD researcher specializing in C/C++, RTOS, PCB design, MEMS sensors, and industrial robotics.">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Piyush Sharma",
+    "jobTitle": "Embedded Systems Engineer",
+    "url": "https://piyushsharma-eng.github.io/",
+    "email": "mailto:piyush.sharma10796@gmail.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/i-piyush",
+      "https://github.com/piyushsharma-eng"
+    ]
+  }
+  </script>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
-  
   *{margin:0;padding:0;box-sizing:border-box}
   :root{
     --bg:#111318;--surface:#181b22;--card:#1e222b;--border:#2a2f3a;
@@ -29,7 +49,7 @@
   .nav-links{display:flex;gap:2.5rem;align-items:center}
   .nav-links a{color:#6a6a60;font-size:.7rem;text-decoration:none;letter-spacing:.16em;text-transform:uppercase;font-weight:400;transition:color .25s}
   .nav-links a:hover{color:#c2bdb0}
-  .nav-contact-btn{color:#d4c4a3 !important;border:1px solid rgba(212,196,163,.25);padding:.4rem 1.1rem;border-radius:2px;transition:background .25s,color .25s !important;cursor:pointer;background:transparent;}
+  .nav-contact-btn{color:#d4c4a3 !important;border:1px solid rgba(212,196,163,.25);padding:.4rem 1.1rem;border-radius:2px;transition:background .25s,color .25s !important;cursor:pointer;background:transparent;font-family:inherit;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;font-weight:400;}
   .nav-contact-btn:hover{background:#d4c4a3 !important;color:#111318 !important;border-color:#d4c4a3}
   .nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.4rem;z-index:300}
   .nav-hamburger span{display:block;width:24px;height:1.5px;background:var(--soft);transition:transform .3s,opacity .3s}
@@ -65,13 +85,6 @@
   .item-title{font-family:var(--serif);font-size:1.7rem;font-weight:300;color:var(--text);line-height:1.2;letter-spacing:-.01em;}
   .label-caps{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:400}
 
-  .video-placeholder{width:100%;aspect-ratio:16/9;background:var(--card);border:1px solid var(--border);border-radius:3px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;cursor:pointer;transition:border-color .3s;position:relative;overflow:hidden;}
-  .video-placeholder:hover{border-color:rgba(212,196,163,.3)}
-  .play-btn{width:64px;height:64px;border-radius:50%;border:1px solid rgba(212,196,163,.25);display:flex;align-items:center;justify-content:center;transition:background .25s,transform .3s}
-  .video-placeholder:hover .play-btn{background:rgba(212,196,163,.06);transform:scale(1.1);border-color:var(--accent)}
-  .play-icon{width:0;height:0;border-top:9px solid transparent;border-bottom:9px solid transparent;border-left:16px solid rgba(212,196,163,.5);margin-left:5px}
-  .video-label{font-size:.68rem;color:var(--muted);letter-spacing:.14em;text-transform:uppercase}
-
   .timeline{list-style:none}
   .timeline-item{display:grid;grid-template-columns:180px 1fr;gap:3.5rem;padding:3.5rem 0;border-bottom:1px solid var(--border);}
   .timeline-item:first-child{border-top:1px solid var(--border)}
@@ -101,7 +114,7 @@
   .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
   .skill-card{border:1px solid var(--border);border-radius:3px;padding:2rem;transition:border-color .25s}
   .skill-card:hover{border-color:#3a4050}
-  .skill-card-title{font-size:.63rem;text-transform:uppercase;letter-spacing:.2em;color:var(--accent);margin-bottom:1.6rem;font-weight:400}
+  .skill-card-title{display:flex;align-items:center;gap:.6rem;font-size:.63rem;text-transform:uppercase;letter-spacing:.2em;color:var(--accent);margin-bottom:1.6rem;font-weight:400}
   .skill-list{list-style:none}
   .skill-list li{font-size:.98rem;color:var(--soft);padding:.32rem 0;border-bottom:1px solid var(--border);line-height:1.5;font-weight:300;display:flex;align-items:center;gap:.6rem;transition:color .2s}
   .skill-list li:last-child{border-bottom:none}
@@ -165,7 +178,6 @@
   .status-dot{width:7px;height:7px;border-radius:50%;background:#4ade80;flex-shrink:0;animation:statusPulse 2.5s ease-in-out infinite;}
   @keyframes statusPulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(74,222,128,.5)}60%{opacity:.8;box-shadow:0 0 0 7px rgba(74,222,128,0)}}
   .section-eyebrow{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);font-weight:400;margin-bottom:.9rem;}
-  .skill-card-title{display:flex;align-items:center;gap:.6rem;}
   .skill-icon{width:15px;height:15px;flex-shrink:0;opacity:.65;}
   .proj-cta{display:inline-flex;align-items:center;gap:.4rem;margin-top:1.4rem;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:3px;transition:color .2s,border-color .2s;font-weight:400;}
   .proj-cta:hover{color:var(--accent);border-color:var(--accent);}
@@ -182,6 +194,26 @@
   #lightbox-close{position:fixed;top:1.4rem;right:1.8rem;background:none;border:none;color:#fff;font-size:1.8rem;cursor:pointer;opacity:.7;transition:opacity .2s;line-height:1;z-index:901;}
   #lightbox-close:hover{opacity:1}
   .lightbox-trigger{cursor:zoom-in}
+
+  /* ── NAV COLLAPSE ── */
+  @media(max-width:1080px){
+    .nav-hamburger{display:flex}
+    #nav-links{
+      display:flex;flex-direction:column;align-items:flex-start;gap:0;
+      position:fixed;top:0;right:0;bottom:0;width:78vw;max-width:320px;
+      background:#2a2f3d;
+      padding:5rem 2rem 2rem;z-index:250;
+      border-left:3px solid var(--accent);
+      box-shadow:-12px 0 40px rgba(0,0,0,0.9);
+      transform:translateX(110%);transition:transform .35s cubic-bezier(.4,0,.2,1);
+      visibility:hidden;
+    }
+    #nav-links.mobile-open{transform:translateX(0);visibility:visible;}
+    #nav-links a{font-size:1rem;letter-spacing:.12em;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.12);width:100%;color:#f1ede4;font-weight:400;}
+    #nav-links a:last-of-type{border-bottom:none}
+    #nav-links a:hover{color:var(--accent)}
+    .nav-contact-btn{margin-top:1.5rem;width:100%;text-align:center;padding:.7rem 1rem !important}
+  }
 
   /* ── TABLET ── */
   @media(max-width:1024px){
@@ -200,22 +232,6 @@
   @media(max-width:768px){
     body{font-size:15px}
     nav{padding:1rem 1.4rem}
-    .nav-hamburger{display:flex}
-    #nav-links{
-      display:flex;flex-direction:column;align-items:flex-start;gap:0;
-      position:fixed;top:0;right:0;bottom:0;width:78vw;max-width:320px;
-      background:#2a2f3d;
-      padding:5rem 2rem 2rem;z-index:250;
-      border-left:3px solid var(--accent);
-      box-shadow:-12px 0 40px rgba(0,0,0,0.9);
-      transform:translateX(110%);transition:transform .35s cubic-bezier(.4,0,.2,1);
-      visibility:hidden;
-    }
-    #nav-links.mobile-open{transform:translateX(0);visibility:visible;}
-    #nav-links a{font-size:1rem;letter-spacing:.12em;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.12);width:100%;color:#f1ede4;font-weight:400;}
-    #nav-links a:last-of-type{border-bottom:none}
-    #nav-links a:hover{color:var(--accent)}
-    .nav-contact-btn{margin-top:1.5rem;width:100%;text-align:center;padding:.7rem 1rem !important}
 
     .hero{padding:1.5rem 1.4rem 4rem}
     .hero-name{white-space:normal;font-size:clamp(2.6rem,11vw,4.2rem);margin-bottom:1.8rem}
@@ -262,6 +278,8 @@
     nav{padding:.9rem 1.2rem}
   }
 </style>
+</head>
+<body>
 
 <div id="contact-overlay" role="dialog" aria-modal="true" aria-label="Contact Piyush">
   <div class="overlay-inner">
@@ -300,9 +318,11 @@
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
     <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#awards">Awards</a>
-    <button class="nav-links nav-contact-btn" onclick="openContact()" style="font-family:inherit;border:1px solid rgba(212,196,163,.25);background:transparent;cursor:pointer;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);padding:.42rem 1.1rem;border-radius:2px;transition:background .25s,color .25s">Contact</button>
+    <a href="#certifications">Certifications</a>
+    <button class="nav-contact-btn" onclick="openContact()">Contact</button>
   </div>
   <button class="nav-hamburger" id="nav-hamburger" onclick="toggleNav()" aria-label="Toggle menu">
     <span></span><span></span><span></span>
@@ -330,16 +350,6 @@
       <a href="#experience"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>View work</a>
     </div>
     <div class="scroll-line"></div>
-  </div>
-</div>
-
-<div class="section-divider">
-  <div class="section-wrap">
-    <h2 class="section-title" style="margin-bottom:2.5rem">Intro Reel</h2>
-    <div class="video-placeholder">
-      <div class="play-btn"><div class="play-icon"></div></div>
-      <div class="video-label">Your intro / work video</div>
-    </div>
   </div>
 </div>
 
@@ -533,8 +543,7 @@
       </div>
       <div class="proj-card">
         <div class="proj-thumb">
-          <div class="proj-thumb-icon">◈</div>
-          <div class="proj-thumb-label">+ image / video</div>
+          <div class="proj-thumb-icon" style="opacity:.18">◈</div>
         </div>
         <div class="proj-body">
           <span class="label-caps" style="margin-bottom:.8rem;display:block">Systems · Linux</span>
@@ -604,10 +613,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous"></script>
 <script>
-gsap.registerPlugin(ScrollTrigger);
-
 if(history.scrollRestoration) history.scrollRestoration='manual';
 window.scrollTo(0,0);
+
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (window.gsap && window.ScrollTrigger && !reduceMotion) {
+
+gsap.registerPlugin(ScrollTrigger);
 
 gsap.set('.hero-status, .hero-tag, .hero-name, .hero-stats, .hero-bio, .hero-ctas, .scroll-line', {opacity:0});
 
@@ -669,7 +681,7 @@ gsap.utils.toArray('.award-item, .cert-card').forEach((el, i) => {
 gsap.utils.toArray('.img-strip img').forEach((img, i) => {
   gsap.from(img, {opacity:0, scale:.95, duration:.7, delay:i*.1, ease:'power2.out', scrollTrigger:{trigger:img, start:'top 90%', toggleActions:'play none none none'}});
 });
-gsap.from('.video-placeholder', {opacity:0, y:30, duration:.8, ease:'power2.out', scrollTrigger:{trigger:'.video-placeholder', start:'top 85%', toggleActions:'play none none none'}});
+} /* end gsap guard */
 
 function toggleNav(){
   document.getElementById('nav-links').classList.toggle('mobile-open');
@@ -701,12 +713,25 @@ const sectionObserver = new IntersectionObserver(entries => {
     }
   });
 }, {rootMargin:'-35% 0px -55% 0px'});
-['about','experience','education','projects','awards'].forEach(id => {
+['about','experience','education','skills','projects','awards','certifications'].forEach(id => {
   const el = document.getElementById(id);
   if (el) sectionObserver.observe(el);
 });
-function openContact(){const o=document.getElementById('contact-overlay');o.classList.add('open');document.body.style.overflow='hidden';o.scrollTop=0;}
-function closeContact(){document.getElementById('contact-overlay').classList.remove('open');document.body.style.overflow='';}
+let contactReturnFocus=null;
+function openContact(){
+  closeNav();
+  contactReturnFocus=document.activeElement;
+  const o=document.getElementById('contact-overlay');
+  o.classList.add('open');document.body.style.overflow='hidden';o.scrollTop=0;
+  o.querySelector('.overlay-close').focus();
+}
+function closeContact(){
+  const o=document.getElementById('contact-overlay');
+  if(!o.classList.contains('open'))return;
+  o.classList.remove('open');document.body.style.overflow='';
+  if(contactReturnFocus&&contactReturnFocus.focus){contactReturnFocus.focus();}
+  contactReturnFocus=null;
+}
 function handleContact(e){
   e.preventDefault();
   const name=document.getElementById('cf-name').value.trim();
@@ -714,9 +739,20 @@ function handleContact(e){
   const subject=document.getElementById('cf-subject').value.trim();
   const msg=document.getElementById('cf-msg').value.trim();
   const label=document.getElementById('submit-label');
-  window.location.href=`mailto:piyush.sharma10796@gmail.com?subject=${encodeURIComponent(subject||'Portfolio inquiry from '+name)}&body=${encodeURIComponent('From: '+name+'\nEmail: '+email+'\n\n'+msg)}`;
-  label.textContent='Opening email client... ✓';
-  setTimeout(()=>{label.textContent='Send message ↗'},3000);
+  const form=e.target;
+  label.textContent='Sending...';
+  fetch('https://formsubmit.co/ajax/piyush.sharma10796@gmail.com',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({name:name,email:email,_subject:subject||'Portfolio inquiry from '+name,message:msg})
+  })
+  .then(r=>{if(!r.ok)throw new Error('send failed');return r.json();})
+  .then(()=>{label.textContent='Message sent ✓';form.reset();})
+  .catch(()=>{
+    window.location.href=`mailto:piyush.sharma10796@gmail.com?subject=${encodeURIComponent(subject||'Portfolio inquiry from '+name)}&body=${encodeURIComponent('From: '+name+'\nEmail: '+email+'\n\n'+msg)}`;
+    label.textContent='Opening email client...';
+  })
+  .finally(()=>{setTimeout(()=>{label.textContent='Send message ↗'},4000);});
 }
 function openLightbox(src,alt){
   document.getElementById('lightbox-img').src=src;
@@ -729,7 +765,11 @@ document.getElementById('lightbox').addEventListener('click',function(e){if(e.ta
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeLightbox();closeContact();}});
 document.querySelectorAll('.img-strip img, .proj-thumb img, .proj-img-bottom img').forEach(img=>{
   img.classList.add('lightbox-trigger');
+  img.setAttribute('tabindex','0');
+  img.setAttribute('role','button');
+  img.setAttribute('aria-label','Enlarge image: '+(img.alt||'photo'));
   img.addEventListener('click',()=>openLightbox(img.src,img.alt));
+  img.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openLightbox(img.src,img.alt);}});
 });
 </script>
 </body>
